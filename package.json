@@ -12,21 +12,50 @@
     "build": "npm run build-renderer && npm run build-electron",
     "pack-app": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format",
+      "yarn test --passWithNoTests",
+      "git add ."
+    ]
   },
   "dependencies": {
+    "autoprefixer": "^10.0.4",
     "electron-is-dev": "^1.1.0",
     "electron-next": "^3.1.5",
+    "postcss": "^8.1.13",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1",
+    "eslint": "^7.14.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
     "next": "latest",
+    "prettier": "^2.2.1",
     "rimraf": "^3.0.0",
     "typescript": "^4.0.5"
   },
