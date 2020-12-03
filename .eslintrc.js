@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: [
     "plugin:react/recommended",
-    "google",
+    "standard",
     "plugin:prettier/recommended",
   ],
   parser: "@typescript-eslint/parser",
@@ -18,5 +18,34 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        extensions: [".js", ".jsx", ".tsx", "ts"],
+      },
+    ], // should add ".ts" if typescript project
+    "no-useless-escape": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-undef": "off",
+    "no-use-before-define": [
+      "off",
+      {
+        functions: true,
+        classes: false,
+      },
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        jsxBracketSameLine: false,
+        singleQuote: false,
+        tabWidth: 2,
+        trailingComma: "es5",
+        useTabs: false,
+        printWidth: 80,
+      },
+    ],
+  },
 };
