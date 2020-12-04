@@ -28,50 +28,14 @@ class RemainingTime extends React.Component {
     // );
 
     debug(dayjs().format("残り DD日 hh時間mm分ss秒"));
-    if (this.eventDate.diff(dayjs()) < 3 * 60 * 60 * 1000 * -1) {
-      // console.log("0秒以下になりました");
-      // console.log(this.eventDate.diff(dayjs()));
-      return {
-        end: true,
-      }; // 終了したときはendがtrueになる
-    } else if (this.eventDate.diff(dayjs()) < 0) {
-      // console.log("0秒以下になりました");
-      // console.log(this.eventDate.diff(dayjs()));
-      return {
-        end: false,
-        helding: true,
-      };
-    } else {
-      return {
-        times:
-          "" +
-          Math.floor(this.eventDate.diff(dayjs()) / 1000 / 60 / 60 / 24) +
-          "日と" +
-          Math.floor((this.eventDate.diff(dayjs()) / 1000 / 60 / 60) % 24) +
-          "時間" +
-          Math.floor((this.eventDate.diff(dayjs()) / 1000 / 60) % 60) +
-          "分" +
-          Math.floor((this.eventDate.diff(dayjs()) / 1000) % 60) +
-          "秒後スタート",
-        show: true,
-      };
-    }
+
+    return {
+      times: dayjs().format("YYYY/MM/DD HH:mm:ss"),
+      show: true,
+    };
   }
 
-  nowsession() {
-    if (this.nowtime().helding) {
-      return (
-        <>
-          開催中
-          {/* <div className={styles.arrows}></div> */}
-        </>
-      );
-    } else if (this.nowtime().end) {
-      return <span>終了しました</span>;
-    } else {
-      return "";
-    }
-  }
+  nowsession() {}
 
   constructor(props: any) {
     super(props);
@@ -99,17 +63,17 @@ class RemainingTime extends React.Component {
   // date: string = moment().format("YYYY-MM-DD");
   render() {
     return (
-      <>
+      <div className="w-full text-center h-full">
         <h2 className="sm:text-5xl  backdrop-filter-30 bg-white text-3xl font-semibold ">
           {/* まもなく始まります */}
           {/* {this.state.insession} */}
         </h2>
         <p>
-          <span className="text-black  backdrop-filter-30 bg-white tabular-nums">
-            {this.state.time || this.state.insession}
+          <span className="text-black  backdrop-filter-30 bg-white proportional-nums text-5xl font-bold">
+            {this.state.time}
           </span>
         </p>
-      </>
+      </div>
     );
   }
 }
