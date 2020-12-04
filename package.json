@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
+    "dayjs": "^1.9.6",
     "electron-is-dev": "^1.1.0",
     "electron-next": "^3.1.5",
     "postcss": "^8.1.13",
@@ -49,6 +50,7 @@
     "@types/react-test-renderer": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "debug": "^4.3.1",
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1",
     "enzyme": "^3.11.0",
@@ -79,6 +81,12 @@
     "files": [
       "main",
       "renderer/out"
-    ]
+    ],
+    "mac": {
+      "icon": "electron-src/icon.png",
+      "target": [
+        "dmg"
+      ]
+    }
   }
 }

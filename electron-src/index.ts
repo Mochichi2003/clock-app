@@ -19,6 +19,7 @@ app.on("ready", async () => {
       preload: join(__dirname, "preload.js"),
     },
   });
+  console.log("http://localhost:8000/");
 
   const url = isDev
     ? "http://localhost:8000/"
