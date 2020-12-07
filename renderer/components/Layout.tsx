@@ -16,7 +16,7 @@ const Layout = ({ children, title }: Props) => (
     </Head>
     <header className="fixed bg-red-400 z-30 w-full flex flex-row-reverse">
       <button
-        className="bg-white p-10 "
+        className="bg-white p-10 m-2 rounded-md hover:bg-gray-300"
         onClick={function () {
           alert("click");
         }}
