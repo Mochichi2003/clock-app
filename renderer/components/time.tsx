@@ -63,7 +63,7 @@ class RemainingTime extends React.Component {
   // date: string = moment().format("YYYY-MM-DD");
   render() {
     return (
-      <div className="w-full text-center dark:bg-gray-900 h-screen relative ">
+      <div className="w-full text-center dark:bg-gray-900 h-screen relative z-0">
         <p
           className="text-black top-2/4  tabular-nums absolute w-full line-height backdrop-filter-30 bg-white proportional-nums text-5xl font-bold"
           style={{ transform: "translate(0%,-50%)" }}

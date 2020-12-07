@@ -14,8 +14,15 @@ const Layout = ({ children, title }: Props) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header className="fixed bg-red-400 w-full flex flex-row-reverse">
-      <button>ボタン</button>
+    <header className="fixed bg-red-400 z-30 w-full flex flex-row-reverse">
+      <button
+        className="bg-white p-10 "
+        onClick={function () {
+          alert("click");
+        }}
+      >
+        ボタン
+      </button>
     </header>
     {children}
     <footer>
