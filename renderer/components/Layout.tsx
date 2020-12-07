@@ -18,7 +18,16 @@ const Layout = ({ children, title }: Props) => (
       <button
         className="bg-white p-10 m-2 rounded-md hover:bg-gray-300"
         onClick={function () {
-          alert("click");
+          // alert("click");
+          if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.querySelector("html").classList.add("dark");
+          } else {
+            document.querySelector("html").classList.remove("dark");
+          }
         }}
       >
         ボタン
