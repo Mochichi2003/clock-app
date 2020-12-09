@@ -4,8 +4,8 @@ const SettingsPage = () => {
   return (
     <Layout title="Settings">
       <p>設定のページ</p>
-      <p>
-        <a href="/" className="text-blue-400">
+      <p className="m-16">
+        <a href="/" className="text-blue-400 m-16">
           戻る
         </a>
       </p>

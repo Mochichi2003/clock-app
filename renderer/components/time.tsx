@@ -65,7 +65,7 @@ class RemainingTime extends React.Component {
     return (
       <div className="w-full text-center dark:bg-gray-900 h-screen relative z-0">
         <p
-          className="text-black select-none dark:text-white top-2/4  tabular-nums absolute w-full line-height backdrop-filter-30  proportional-nums text-5xl font-bold"
+          className="text-black select-none dark:text-white top-2/4  tabular-nums absolute w-full line-height backdrop-filter-30  proportional-nums text-6xl font-bold"
           style={{ transform: "translate(0%,-50%)" }}
         >
           {this.state.time}
