@@ -1,5 +1,4 @@
 import {
-  Text,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -10,6 +9,13 @@ import {
   useDisclosure,
   ModalCloseButton,
   IconButton,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
 } from "@chakra-ui/react";
 import { SVGProps } from "react";
 
@@ -46,17 +52,38 @@ function BasicUsage() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>設定</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>テキスト</Text>
+            <Table variant="simple">
+              <TableCaption>Imperial to metric conversion factors</TableCaption>
+              <Thead>
+                <Tr>
+                  <Th>To convert</Th>
+                  <Th>into</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>inches</Td>
+                  <Td>millimetres (mm)</Td>
+                </Tr>
+                <Tr>
+                  <Td>feet</Td>
+                  <Td>centimetres (cm)</Td>
+                </Tr>
+                <Tr>
+                  <Td>yards</Td>
+                  <Td>metres (m)</Td>
+                </Tr>
+              </Tbody>
+            </Table>
           </ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
