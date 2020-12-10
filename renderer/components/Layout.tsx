@@ -1,16 +1,9 @@
 import React, { ReactNode, SVGProps } from "react";
 // import Link from "next/link";
 import Head from "next/head";
-import Link from "next/link";
-import {
-  IconButton,
-  Flex,
-  Spacer,
-  Heading,
-  Box,
-  Button,
-  useColorMode,
-} from "@chakra-ui/react";
+
+import { IconButton, Flex, Spacer, Box, useColorMode } from "@chakra-ui/react";
+import SettingButton from "./SettingsPopUp";
 
 type Props = {
   children: ReactNode;
@@ -73,13 +66,13 @@ function DarkLightModeCheange() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <IconButton
+      borderRadius="full"
       aria-label="DarkLightModeCheange"
       icon={colorMode === "light" ? <IcRoundWbSunny /> : <SiGlyphMoonStar />}
       onClick={toggleColorMode}
     />
   );
 }
-
 class HeaderNavs extends React.Component {
   render() {
     return (
@@ -90,15 +83,17 @@ class HeaderNavs extends React.Component {
           </Box> */}
           <Spacer />
           <Box>
-            <Link href="/setting">
+            <SettingButton />
+            {/* <Link href="/setting">
               <IconButton
                 // colorScheme="teal"
+                borderRadius="full"
                 aria-label="settings"
-                mr="4"
+                mr="2"
                 href="/setting"
                 icon={<ClaritySettingsSolid />}
               />
-            </Link>
+            </Link> */}
             <DarkLightModeCheange />
           </Box>
         </Flex>
