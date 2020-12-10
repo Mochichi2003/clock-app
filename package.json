@@ -30,10 +30,14 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.0.3",
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
     "autoprefixer": "^10.0.4",
     "dayjs": "^1.9.6",
     "electron-is-dev": "^1.1.0",
     "electron-next": "^3.1.5",
+    "framer-motion": "^2.9.5",
     "postcss": "^8.1.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

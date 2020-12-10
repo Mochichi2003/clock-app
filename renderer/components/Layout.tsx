@@ -1,7 +1,7 @@
 import React, { ReactNode, SVGProps } from "react";
 // import Link from "next/link";
 import Head from "next/head";
-
+import { IconButton, Flex, Spacer } from "@chakra-ui/react";
 type Props = {
   children: ReactNode;
   title?: string;
@@ -98,16 +98,16 @@ class DarkLightSwicher extends React.Component {
 }
 
 const Layout = ({ children, title }: Props) => (
-  <div>
+  <div className="dark:bg-gray-900 dark:text-white">
     <Head>
       <title>{title || "タイトル"}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header className="fixed  z-30 w-full flex flex-row-reverse">
+    <header className=" t-0 l-0  z-30 w-full absolute flex flex-row-reverse">
       <DarkLightSwicher />
     </header>
-    {children}
+    <main>{children}</main>
     <footer>
       {/* <hr /> */}
       {/* <span>I&apos;m here to stay (Footer)</span> */}

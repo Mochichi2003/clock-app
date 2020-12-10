@@ -20,7 +20,7 @@ app.on("ready", async () => {
     },
   });
   console.log("http://localhost:8000/");
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   const url = isDev
     ? "http://localhost:8000/"

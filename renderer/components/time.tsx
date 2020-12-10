@@ -5,6 +5,7 @@ import React from "react";
 import Debug from "debug";
 // import Link from "next/link";
 const debug = Debug("dev:time");
+import { ChakraProvider, Box, Checkbox } from "@chakra-ui/react";
 
 dayjs.locale("ja");
 // moment().locale("ja");
