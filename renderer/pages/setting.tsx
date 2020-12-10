@@ -9,6 +9,41 @@ const SettingsPage = () => {
           戻る
         </a>
       </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
+      <div className="m-16">
+        <a href="/" className="text-blue-400 m-16">
+          戻る
+        </a>
+      </div>
     </Layout>
   );
 };

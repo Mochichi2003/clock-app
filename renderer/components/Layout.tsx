@@ -1,7 +1,17 @@
 import React, { ReactNode, SVGProps } from "react";
 // import Link from "next/link";
 import Head from "next/head";
-import { IconButton, Flex, Spacer } from "@chakra-ui/react";
+import Link from "next/link";
+import {
+  IconButton,
+  Flex,
+  Spacer,
+  Heading,
+  Box,
+  Button,
+  useColorMode,
+} from "@chakra-ui/react";
+
 type Props = {
   children: ReactNode;
   title?: string;
@@ -59,11 +69,52 @@ export function ClaritySettingsSolid(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-class DarkLightSwicher extends React.Component {
+function DarkLightModeCheange() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Button onClick={toggleColorMode}>
+      Toggle {colorMode === "light" ? "Dark" : "Light"}
+    </Button>
+  );
+}
+
+class HeaderNavs extends React.Component {
   render() {
     return (
       <>
-        <a
+        <Flex className="t-0 l-0  z-30 w-full absolute " p="2">
+          {/* <Box p="2">
+            <Heading size="md">Chakra App</Heading>
+          </Box> */}
+          <Spacer />
+          <Box>
+            <Link href="/setting">
+              <IconButton
+                colorScheme="teal"
+                aria-label="settings"
+                mr="4"
+                href="/setting"
+                icon={<ClaritySettingsSolid />}
+              />
+            </Link>
+            <DarkLightModeCheange />
+            {/* <IconButton
+              colorScheme="teal"
+              aria-label="settings"
+              mr="0"
+              onClick={function () {
+                // alert("click");
+                if (document.querySelector("html").classList.contains("dark")) {
+                  document.querySelector("html").classList.remove("dark");
+                } else {
+                  document.querySelector("html").classList.add("dark");
+                }
+              }}
+              icon={<IcRoundWbSunny />}
+            /> */}
+          </Box>
+        </Flex>
+        {/* <a
           className="bg-gray-900 dark:bg-white ring-inset group p-2 m-2 outline-none  rounded-full cursor-pointer focus:ring-yellow-400 focus:ring-4 focus:ring-opacity-50  "
           onClick={function () {
             // alert("click");
@@ -74,7 +125,7 @@ class DarkLightSwicher extends React.Component {
             }
           }}
         >
-          {/* 太陽のほう */}
+          {/* 太陽のほう 
           <IcRoundWbSunny className="fill-current text-white dark:text-black" />
         </a>
         <a
@@ -89,9 +140,9 @@ class DarkLightSwicher extends React.Component {
           // }}
           href="/setting"
         >
-          {/* 歯車の方 */}
+          {/* 歯車の方 *
           <ClaritySettingsSolid className="fill-current text-white dark:text-black" />
-        </a>
+        </a> */}
       </>
     );
   }
@@ -104,9 +155,9 @@ const Layout = ({ children, title }: Props) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header className=" t-0 l-0  z-30 w-full absolute flex flex-row-reverse">
-      <DarkLightSwicher />
-    </header>
+    {/* <header className=" t-0 l-0  z-30 w-full absolute flex flex-row-reverse"> */}
+    <HeaderNavs />
+    {/* </header> */}
     <main>{children}</main>
     <footer>
       {/* <hr /> */}
