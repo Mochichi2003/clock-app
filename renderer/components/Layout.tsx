@@ -3,7 +3,7 @@ import React, { ReactNode, SVGProps } from "react";
 import Head from "next/head";
 
 import { IconButton, Flex, Spacer, Box, useColorMode } from "@chakra-ui/react";
-import SettingButton from "./SettingsPopUp";
+// import SettingButton from "./SettingsPopUp";
 
 type Props = {
   children: ReactNode;
@@ -83,7 +83,7 @@ class HeaderNavs extends React.Component {
           </Box> */}
           <Spacer />
           <Box>
-            <SettingButton />
+            {/* <SettingButton /> */}
             {/* <Link href="/setting">
               <IconButton
                 // colorScheme="teal"
