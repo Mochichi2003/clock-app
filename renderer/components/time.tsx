@@ -5,7 +5,7 @@ import React from "react";
 import Debug from "debug";
 // import Link from "next/link";
 const debug = Debug("dev:time");
-import { ChakraProvider, Box, Checkbox } from "@chakra-ui/react";
+import { ChakraProvider, Box, Checkbox, Text } from "@chakra-ui/react";
 
 dayjs.locale("ja");
 // moment().locale("ja");
@@ -65,12 +65,12 @@ class RemainingTime extends React.Component {
   render() {
     return (
       <div className="w-full text-center dark:bg-gray-900 h-screen relative z-0">
-        <p
-          className="text-black select-none dark:text-white top-2/4  tabular-nums absolute w-full line-height backdrop-filter-30  proportional-nums text-6xl font-bold"
+        <Text
+          className=" select-none  top-2/4  tabular-nums absolute w-full line-height backdrop-filter-30  proportional-nums text-6xl font-bold"
           style={{ transform: "translate(0%,-50%)" }}
         >
           {this.state.time}
-        </p>
+        </Text>
       </div>
     );
   }

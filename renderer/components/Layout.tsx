@@ -72,9 +72,11 @@ export function ClaritySettingsSolid(props: SVGProps<SVGSVGElement>) {
 function DarkLightModeCheange() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Button onClick={toggleColorMode}>
-      Toggle {colorMode === "light" ? "Dark" : "Light"}
-    </Button>
+    <IconButton
+      aria-label="DarkLightModeCheange"
+      icon={colorMode === "light" ? <IcRoundWbSunny /> : <SiGlyphMoonStar />}
+      onClick={toggleColorMode}
+    />
   );
 }
 
@@ -90,7 +92,7 @@ class HeaderNavs extends React.Component {
           <Box>
             <Link href="/setting">
               <IconButton
-                colorScheme="teal"
+                // colorScheme="teal"
                 aria-label="settings"
                 mr="4"
                 href="/setting"
@@ -98,51 +100,8 @@ class HeaderNavs extends React.Component {
               />
             </Link>
             <DarkLightModeCheange />
-            {/* <IconButton
-              colorScheme="teal"
-              aria-label="settings"
-              mr="0"
-              onClick={function () {
-                // alert("click");
-                if (document.querySelector("html").classList.contains("dark")) {
-                  document.querySelector("html").classList.remove("dark");
-                } else {
-                  document.querySelector("html").classList.add("dark");
-                }
-              }}
-              icon={<IcRoundWbSunny />}
-            /> */}
           </Box>
         </Flex>
-        {/* <a
-          className="bg-gray-900 dark:bg-white ring-inset group p-2 m-2 outline-none  rounded-full cursor-pointer focus:ring-yellow-400 focus:ring-4 focus:ring-opacity-50  "
-          onClick={function () {
-            // alert("click");
-            if (document.querySelector("html").classList.contains("dark")) {
-              document.querySelector("html").classList.remove("dark");
-            } else {
-              document.querySelector("html").classList.add("dark");
-            }
-          }}
-        >
-          {/* 太陽のほう 
-          <IcRoundWbSunny className="fill-current text-white dark:text-black" />
-        </a>
-        <a
-          className="bg-gray-900 dark:bg-white ring-inset group p-2 m-2 mr-1 outline-none  rounded-full cursor-pointer focus:ring-yellow-400 focus:ring-4 focus:ring-opacity-50  "
-          // onClick={function () {
-          //   // alert("click");
-          //   if (document.querySelector("html").classList.contains("dark")) {
-          //     document.querySelector("html").classList.remove("dark");
-          //   } else {
-          //     document.querySelector("html").classList.add("dark");
-          //   }
-          // }}
-          href="/setting"
-        >
-          {/* 歯車の方 *
-          <ClaritySettingsSolid className="fill-current text-white dark:text-black" />
-        </a> */}
       </>
     );
   }
